@@ -64,10 +64,7 @@ namespace Burberry.Models
 
     public class RegisterViewModel
     {
-        [Required]
         
-        [Display(Name = "Username")]
-        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

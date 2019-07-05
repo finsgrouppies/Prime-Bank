@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Burberry", "Burberry\Burberry.csproj", "{29E8396E-8D08-4581-9159-D32B3116242A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeBank", "Burberry\PrimeBank.csproj", "{29E8396E-8D08-4581-9159-D32B3116242A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{690A34C5-E8B6-4C20-959B-1625782342E5}"
+	ProjectSection(SolutionItems) = preProject
+		Credentials.txt = Credentials.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
