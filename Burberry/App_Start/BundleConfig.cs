@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Burberry
+namespace PrimeBank
 {
     public class BundleConfig
     {

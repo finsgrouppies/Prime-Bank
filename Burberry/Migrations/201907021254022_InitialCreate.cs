@@ -1,4 +1,4 @@
-namespace Burberry.Migrations
+namespace PrimeBank.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

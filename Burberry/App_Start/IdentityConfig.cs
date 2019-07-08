@@ -10,10 +10,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Burberry.Models;
+using PrimeBank.Models;
 using System.Net.Mail;
 
-namespace Burberry
+namespace PrimeBank
 {
     public class EmailService : IIdentityMessageService
     {
@@ -28,7 +28,7 @@ namespace Burberry
 
             email.IsBodyHtml = true;
 
-            using (var mailClient = new Burberry.GmailEmailService())
+            using (var mailClient = new PrimeBank.GmailEmailService())
             {
                 //In order to use the original from email address, uncomment this line:
                 //email.From = new MailAddress(mailClient.UserName, "(do not reply)");

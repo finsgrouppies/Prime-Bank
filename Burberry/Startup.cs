@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Burberry.Startup))]
-namespace Burberry
+[assembly: OwinStartupAttribute(typeof(PrimeBank.Startup))]
+namespace PrimeBank
 {
     public partial class Startup
     {

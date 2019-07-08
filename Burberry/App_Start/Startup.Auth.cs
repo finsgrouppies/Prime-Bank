@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Burberry.Models;
+using PrimeBank.Models;
 
-namespace Burberry
+namespace PrimeBank
 {
     public partial class Startup
     {

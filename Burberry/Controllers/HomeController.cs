@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Burberry.Controllers
+namespace PrimeBank.Controllers
 {
     public class HomeController : Controller
     {

@@ -8,9 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Burberry.Models;
+using PrimeBank.Models;
+using System.Web.Security;
 
-namespace Burberry.Controllers
+namespace PrimeBank.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -223,12 +224,12 @@ namespace Burberry.Controllers
                     return View("ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account",
+            new { UserId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Reset Password",
+            "Please reset your password by clicking here: <a href=\"" + callbackUrl + "\">link</a>");
+                return View("ForgotPasswordConfirmation");
             }
 
             // If we got this far, something failed, redisplay form
@@ -407,6 +408,12 @@ namespace Burberry.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
+
+            //FormsAuthentication.SignOut();
+            //Session.Clear();
+            //Session.RemoveAll();
+            //Session.Abandon();
+            //return RedirectToAction("Index", "Home");
         }
 
         //

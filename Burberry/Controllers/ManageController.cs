@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Burberry.Models;
+using PrimeBank.Models;
 
-namespace Burberry.Controllers
+namespace PrimeBank.Controllers
 {
     [Authorize]
     public class ManageController : Controller
