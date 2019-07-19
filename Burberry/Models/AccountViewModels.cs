@@ -48,10 +48,11 @@ namespace PrimeBank.Models
 
     public class LoginViewModel
     {
+        
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,12 +65,48 @@ namespace PrimeBank.Models
 
     public class RegisterViewModel
     {
-        
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "You must provide a phone number")]
+        [Display(Name = "Phone")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        public string PhoneNumber { get; set; }
+
 
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        [Display(Name = "Surname")]
+        public string SurName { get; set; }
+
+        [StringLength(100)]
+        [Display(Name = "Other Name")]
+        public string OtherName { get; set; }
+
+
+        [Display(Name = "C Limit")]
+        public int C_Limit { get; set; }
+
+        [Display(Name = "Us Limit")]
+        public int Us_Limit { get; set; }
+
+        [Display(Name = "Group Code")]
+        public int G_code { get; set; }
+
+
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -81,6 +118,21 @@ namespace PrimeBank.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+         
+        
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     public class ResetPasswordViewModel
@@ -111,4 +163,10 @@ namespace PrimeBank.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
+
+ 
+
+
+
 }

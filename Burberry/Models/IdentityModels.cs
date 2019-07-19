@@ -9,6 +9,12 @@ namespace PrimeBank.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string SurName { get; internal set; }
+        public string OtherName { get; internal set; }
+        public int C_Limit { get; internal set; }
+        public string City { get; internal set; }
+        public int Us_Limit { get; internal set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
